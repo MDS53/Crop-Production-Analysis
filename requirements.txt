@@ -1,0 +1,6 @@
+pandas
+numpy
+bokeh
+streamlit
+seaborn
+matplotlib
