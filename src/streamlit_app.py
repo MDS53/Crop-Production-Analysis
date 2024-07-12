@@ -32,7 +32,7 @@ def show_analysis():
         k=show_analysis__()
         
         logging.info(f"show_analysis() ran successfully ")
-        st.button('Go to Home', on_click=go_to_home)
+        #st.button('Go to Home', on_click=go_to_home)
     except Exception as e:
         logging.exception(f"Error {e} at app.py file in show_analysis() ")
 
@@ -43,7 +43,7 @@ def show_relationship():
     try:
         a=show_relationships()
         logging.info(f"show_analysis() ran successfully ")
-        st.button('Go to Home', on_click=go_to_home)
+       # st.button('Go to Home', on_click=go_to_home)
     except Exception as e:
         logging.exception(f"Error {e} at app.py file in show_relationship() ")
         
