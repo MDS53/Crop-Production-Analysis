@@ -433,6 +433,65 @@ class show_analysis__:
                     - The table data will dynamically update based on your selected options.
                 """)
             st.write(" ## Note : Here you can see 'None' option in selecting options, it  means selecting all options  ##")
+
+            
+            #6th plot
+            self.d=self.df[['Crop','State_Name','Area','Production']]
+            st.title(" ")
+            st.markdown('### Relationship between Area and Production in selected State    ')
+            self.col1, self.col2,self.col3,self.col4,self.col5 = st.columns([5,4,3,2, 1])
+            with self.col1:
+                self.selected_state = st.selectbox('Select State ', list(self.df['State_Name'].unique()),key="6.1")
+            self.selection = alt.selection_single(on='mouseover', nearest=True, empty='none', fields=['Area'])
+            # Creating the line chart with interactive tooltips
+            self.chart = alt.Chart(df[df.State_Name == self.selected_state]).mark_line().encode(
+                x='Area:Q',
+                y='Production:Q',
+                color=alt.Color('State_Name:N', scale=alt.Scale(scheme='category10')),
+                tooltip=['Crop:N', 'State_Name:N', 'Area:Q', 'Production:Q']
+            ).properties(
+                width=800,
+                height=400,
+                title='Line Chart: Area vs Production corresponding to selected District'
+            ).add_selection(
+                self.selection
+            )
+
+            # Creating points for hover interaction
+            self.points = self.chart.mark_circle(size=60).encode(
+                opacity=alt.condition(self.selection, alt.value(1), alt.value(0))
+            )
+
+            # Layering the points on top of the line chart
+            self.interactive_chart = self.chart + self.points
+
+            # Display the interactive chart in Streamlit
+            st.altair_chart(self.interactive_chart, use_container_width=True)
+            
+            self.col1, self.col2 = st.columns([3,9])
+            with self.col1:
+                st.write("This table corresponds to the visualization above.")
+                st.dataframe(self.d[self.d.State_Name==self.selected_state][['Crop','Area','Production']])
+            
+            with self.col2:
+                
+                st.write("### Insights ###")
+                st.write("""
+                    You'll be able to...
+                    - Notice that certain State exhibit a strong correlation between the cultivated area and production output.
+                    - Observe that in some State, even a small cultivated area can result in high production due to optimal local growing conditions.
+                    - See that certain State require larger areas to achieve high production, which could be due to soil quality or other regional factors.
+                    - Find that the efficiency of crop production in terms of area can vary significantly across different State.
+                    - Recognize that specific State may have unique agricultural practices that impact the relationship between area and production.
+                    
+                    And
+                    
+                    - You can see The exact production values by hovering over the data points in the scatter plot above.
+                    - By hovering over the data points in the scatter plot, you'll be able to see Crop name as well 
+                    - You can cross-check or download the table to obtain exact values for detailed analysis.
+                    - The table data will dynamically update based on your selected options.
+                """)
+            
             logging.info("show_analysis_Scatters() from Analysis package ran successfully ")
             
         except Exception as e:
