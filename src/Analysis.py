@@ -353,15 +353,15 @@ class show_analysis__:
             self.d=self.df.groupby(['State_Name','District_Name','Crop_Year','Crop'])[['Area','Production']].mean().sort_values(by=['Production'],ascending=False).reset_index()
             self.col1, self.col2,self.col3,self.col4= st.columns([4,3,2, 1])
             with self.col1:
-                self.selected_State = st.selectbox('Pick Crop', list(self.df['State_Name'].unique()),key="4.1.1")
+                self.selected_State = st.selectbox('Select State_Name', list(self.df['State_Name'].unique()),key="4.1.1")
                 
             with self.col2:  
                 self.crop_options = [None] + list(self.f[self.selected_State])
-                self.selected_district = st.selectbox('Pick Crop',self.crop_options,key="4.2.1")
+                self.selected_district = st.selectbox('Select District',self.crop_options,key="4.2.1")
             
             with self.col3:
                 self.crop_options = [None] + sorted(list(self.df['Crop_Year'].unique()))
-                self.selected_year = st.selectbox('Pick Crop', self.crop_options,key="4.3.1")
+                self.selected_year = st.selectbox('Select Year', self.crop_options,key="4.3.1")
             st.write(self.selected_district)
             self.d=self.df.groupby(['State_Name','District_Name','Crop_Year','Crop'])[['Area','Production']].mean().sort_values(by=['Production'],ascending=False).reset_index()    
 
