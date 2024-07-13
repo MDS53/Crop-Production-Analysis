@@ -58,10 +58,10 @@ def show_home():
     st.title("Discover insights in Crop Production Analysis with these below buttons.")
     if st.button('Go to Analysis'):
         st.experimental_set_query_params(page='analysis')
-        st.experimental_rerun()
+        #st.experimental_rerun() # this will reruns the application from start
     if st.button('Go to Relationship'):
         st.experimental_set_query_params(page='relationship')
-        st.experimental_rerun()
+        #st.experimental_rerun()
     if st.button('Go to DataFrame'):
         st.experimental_set_query_params(page='dataframe')
 def go_to_home():
