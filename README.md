@@ -62,7 +62,7 @@ Each button navigates to a different section of the application:
 - The charts are dynamic, allowing you to select different options to view various types of analyses.
 - The page format:
   - **Title**: Analysis Heading or Title
-  - **Chart**: Dynamic visualization of the selected analysis
+  - **Chart**: Dynamic Interactive visualization of the selected analysis
   - **DataFrame**: The relevant data displayed in a table format
   - **Insights**: Insights derived from the data and analysis
 
@@ -71,7 +71,7 @@ Each button navigates to a different section of the application:
 - The charts are dynamic, allowing you to select different options to view various types of relationships.
 - The page format:
   - **Title**: Relationship Heading or Title
-  - **Chart**: Dynamic visualization of the selected relationship
+  - **Chart**: Dynamic Interactive visualization of the selected relationship
   - **DataFrame**: The relevant data displayed in a table format
   - **Insights**: Insights derived from the data and relationships
 
