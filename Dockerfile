@@ -19,4 +19,4 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install -r requirements.txt
-CMD ["streamlit","streamlit_app.py"]
+CMD ["streamlit","run","streamlit_app.py"]
