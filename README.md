@@ -23,6 +23,8 @@ This project aims to provide a new perspective on crop production analysis. By u
 
 <img src="https://github.com/MDS53/Youtube-Content-Scrapper/assets/82602774/18062093-e3bf-4dc6-b3c4-9e060d29b144" alt="Streamlit" width="200"/>
 
+<img src="https://github.com/MDS53/Adultcensusincome-_/assets/82602774/05210c5c-bbec-4efa-a6c6-f859b2fa9121" alt="Docker icon" width="200"/>
+
 
 
 ## Explore the Data
