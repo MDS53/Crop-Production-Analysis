@@ -127,11 +127,11 @@ Demo :
 https://github.com/user-attachments/assets/49f463a1-5255-4079-8311-f562b6af8df7
 
 ## Docker Hub Link:
-[clickHere to pull DockerImage](https://hub.docker.com/r/mds2019/crp_analysis)  
+[clickHere to pull DockerImage](https://hub.docker.com/r/mds2019/crp_analysis/tags) 
  or Copy the below command and paste it in your CLI
 
 ```sh
-docker pull mds2019/crp_analysis
+docker pull mds2019/crp_analysis:2.0
 ```
 
 This will pull the Docker image containing the pre-built application environment and dependencies, allowing you to run the application in a containerized environment.
